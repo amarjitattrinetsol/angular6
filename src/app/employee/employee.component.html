@@ -1,0 +1,23 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Code</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr 
+        *ngFor="let employee of employeeData"
+        [ngStyle] = "{color: getColor(employee.id)}"
+        >
+        <th scope="row">{{employee.id}}</th>
+        <td>{{employee.code}}</td>
+        <td>{{employee.name | addprefix}}</td>
+        <td>{{employee.email | lowercase}}</td>
+        <td>{{employee.mobile}}</td>
+      </tr>
+    </tbody>
+  </table>
